@@ -1,0 +1,269 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroBg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(13, 27, 42, 0.9) 0%, 
+    rgba(13, 27, 42, 0.7) 50%, 
+    rgba(13, 27, 42, 0.4) 100%
+  );
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  color: var(--color-surface);
+}
+
+.heroTag {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(245, 183, 0, 0.2);
+  color: var(--color-accent);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-lg);
+  border: 1px solid rgba(245, 183, 0, 0.3);
+}
+
+.heroTitle {
+  color: var(--color-surface);
+  margin-bottom: var(--space-md);
+}
+
+.heroTitle span {
+  color: var(--color-accent);
+}
+
+.heroDesc {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* Services Section */
+.servicesSection {
+  background-color: var(--color-bg);
+  position: relative;
+  z-index: 2;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.sectionTag {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.sectionHeader h2 {
+  margin-bottom: var(--space-md);
+}
+
+.sectionHeader p {
+  color: var(--color-text-secondary);
+}
+
+/* Value Proposition */
+.valueSection {
+  background-color: var(--color-surface);
+  padding: var(--space-4xl) 0;
+}
+
+.valueContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.valueList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.valueItem {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.valueIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: rgba(245, 183, 0, 0.1);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.valueItem h4 {
+  font-family: var(--font-outfit);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-xs);
+  color: var(--color-primary);
+}
+
+.valueItem p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+.valueImageWrapper {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 500px;
+  box-shadow: var(--shadow-xl);
+}
+
+/* Fleet Preview */
+.fleetSection {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.fleetSection .sectionHeader h2 {
+  color: var(--color-surface);
+}
+
+.fleetSection .sectionHeader p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fleetGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.fleetCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.fleetCard:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-accent);
+}
+
+.fleetImage {
+  position: relative;
+  height: 240px;
+  width: 100%;
+}
+
+.fleetCardContent {
+  padding: var(--space-lg);
+}
+
+.fleetCardContent h3 {
+  color: var(--color-surface);
+  margin-bottom: var(--space-xs);
+}
+
+.fleetCardContent p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+.fleetFeatures {
+  display: flex;
+  gap: var(--space-md);
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.fleetFeatures span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+  .fleetGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+  }
+  .heroContent {
+    text-align: center;
+  }
+  .heroActions {
+    justify-content: center;
+  }
+  .heroBg::after {
+    background: linear-gradient(
+      to bottom, 
+      rgba(13, 27, 42, 0.7) 0%, 
+      rgba(13, 27, 42, 0.8) 100%
+    );
+  }
+  .fleetGrid {
+    grid-template-columns: 1fr;
+  }
+  .valueImageWrapper {
+    min-height: 350px;
+    margin-top: var(--space-2xl);
+  }
+}
